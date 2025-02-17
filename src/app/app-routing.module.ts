@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import { NavMenuComponent } from './modules/dashboard/components/nav-menu/nav-menu.component';
+
+
 
 const routes: Routes = [
-  {path:'dashboard', component:DashboardComponent,
-    loadChildren: ()=> import('../app/modules/dashboard/dashboard.module').then(
-      (m)=> m .DashboardModule
-    )
-  },
-
-  //esta lleva a la pagin por defecto, cuando se escribe algo mal
-  // {path:'**', component: }
-  
+  { path: 'inicio', loadChildren: () => import('./modules/dashboard/pages/inicio/inicio.module').then(m => m.InicioModule) },
+  { path: 'alumnos', loadChildren: () => import('./modules/dashboard/pages/alumnos/alumnos.module').then(m => m.AlumnosModule) },
+  { path: 'cursos', loadChildren: () => import('./modules/dashboard/pages/cursos/cursos.module').then(m => m.CursosModule) },
+  { path: 'usuarios', loadChildren: () => import('./modules/dashboard/pages/usuarios/usuarios.module').then(m => m.UsuariosModule) },
+  { path: '', redirectTo: 'inicio', pathMatch: 'full' } // Redirige por defecto a inicio
 ];
 
 @NgModule({

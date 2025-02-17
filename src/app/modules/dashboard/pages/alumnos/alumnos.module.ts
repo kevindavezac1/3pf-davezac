@@ -2,21 +2,23 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AlumnosRoutingModule } from './alumnos-routing.module';
-import { AlumnosComponent } from './alumnos.component';
-import { MatTable } from '@angular/material/table';
-import { MatButton } from '@angular/material/button';
+
+import {  MatTableModule } from '@angular/material/table';
+import {  MatButtonModule } from '@angular/material/button';
+import {  MatIconModule } from '@angular/material/icon';
+
 
 
 @NgModule({
   declarations: [
-    AlumnosComponent
   ],
   imports: [
     CommonModule,
     AlumnosRoutingModule,
-    MatTable,
-    MatButton
+    MatTableModule,
+    MatButtonModule,
+    MatIconModule,
   ],
-  exports:[AlumnosComponent]
+  exports:[]
 })
 export class AlumnosModule { }

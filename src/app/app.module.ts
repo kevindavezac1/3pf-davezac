@@ -13,15 +13,35 @@ import { MatFormFieldModule } from '@angular/material/form-field';  // Necesario
 import { MatInputModule } from '@angular/material/input';  // Necesario para <mat-input>
 import { FormsModule } from '@angular/forms';  // Necesario para ngModel
 import { ReactiveFormsModule } from '@angular/forms';  // Si usas formularios reactivos
-import { DashboardModule } from './modules/dashboard/dashboard.module';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { CursosComponent } from './modules/dashboard/pages/cursos/cursos.component';
+import { InicioComponent } from './modules/dashboard/pages/inicio/inicio.component';
+import { DialogEditAlumnoComponent } from './modules/dashboard/pages/dialog-edit-alumno/dialog-edit-alumno.component';
+import { DialogEditCursoComponent } from './modules/dashboard/pages/dialog-edit-curso/dialog-edit-curso.component';
+import { UsuariosComponent } from './modules/dashboard/pages/usuarios/usuarios.component';
+import { AlumnosComponent } from './modules/dashboard/pages/alumnos/alumnos.component';
+import { TitleSizeDirective } from './directives/title-size.directive';
+import { FullNamePipe } from './directives/pipes/full-name.pipe';
+import { NavMenuComponent } from './modules/dashboard/components/nav-menu/nav-menu.component';
+import { ToolbarComponent } from './modules/dashboard/components/toolbar/toolbar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-  
+    CursosComponent,
+    InicioComponent,
+    DialogEditAlumnoComponent,
+    DialogEditCursoComponent,
+    UsuariosComponent,
+    AlumnosComponent,
+    FullNamePipe,
+    TitleSizeDirective,
+    NavMenuComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -35,8 +55,12 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MatInputModule,     // Importar el módulo para usar <mat-input>
     FormsModule,  // Importar FormsModule para usar ngModel
     ReactiveFormsModule,  // Si usas formularios reactivos
-    DashboardModule
+    MatInputModule, // Añade MatListModule
+    MatToolbarModule,
+    MatListModule
+    
   ],
+
   providers: [
     provideAnimationsAsync()
   ],
