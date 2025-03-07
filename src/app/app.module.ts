@@ -7,12 +7,12 @@ import { AppComponent } from './app.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
-import { MatDialogModule } from '@angular/material/dialog';  // Necesario para los diálogos
-import { MatIconModule } from '@angular/material/icon';  // Necesario para los iconos
-import { MatFormFieldModule } from '@angular/material/form-field';  // Necesario para <mat-form-field>
-import { MatInputModule } from '@angular/material/input';  // Necesario para <mat-input>
-import { FormsModule } from '@angular/forms';  // Necesario para ngModel
-import { ReactiveFormsModule } from '@angular/forms';  // Si usas formularios reactivos
+import { MatDialogModule } from '@angular/material/dialog';  
+import { MatIconModule } from '@angular/material/icon';  
+import { MatFormFieldModule } from '@angular/material/form-field';  
+import { MatInputModule } from '@angular/material/input';  
+import { FormsModule } from '@angular/forms';  
+import { ReactiveFormsModule } from '@angular/forms';  
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CursosComponent } from './modules/dashboard/pages/cursos/cursos.component';
@@ -27,6 +27,10 @@ import { NavMenuComponent } from './modules/dashboard/components/nav-menu/nav-me
 import { ToolbarComponent } from './modules/dashboard/components/toolbar/toolbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { LoginComponent } from './modules/dashboard/pages/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { rootReducer } from './store';
 
 
 @NgModule({
@@ -41,7 +45,8 @@ import { MatListModule } from '@angular/material/list';
     FullNamePipe,
     TitleSizeDirective,
     NavMenuComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -49,15 +54,17 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatButtonModule,
     MatTableModule,
-    MatDialogModule,  // Importar el módulo para usar diálogos
-    MatIconModule,    // Importar el módulo para usar iconos
-    MatFormFieldModule,  // Importar el módulo para usar <mat-form-field>
-    MatInputModule,     // Importar el módulo para usar <mat-input>
-    FormsModule,  // Importar FormsModule para usar ngModel
-    ReactiveFormsModule,  // Si usas formularios reactivos
-    MatInputModule, // Añade MatListModule
+    MatDialogModule,  
+    MatIconModule,    
+    MatFormFieldModule, 
+    MatInputModule,     
+    FormsModule, 
+    ReactiveFormsModule,  
+    MatInputModule, 
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule,
+    StoreModule.forRoot(rootReducer, {})
     
   ],
 

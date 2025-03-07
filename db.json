@@ -1,0 +1,34 @@
+{
+  "alumnos": [
+    {
+      "id": "a241",
+      "nombre": "Juan",
+      "apellido": "Gomez"
+    },
+    {
+      "id": "a242",
+      "nombre": "Maria",
+      "apellido": "Lopez"
+    },
+    {
+      "id": "a243",
+      "nombre": "Carlos",
+      "apellido": "Perez"
+    },
+    {
+      "id": "290",
+      "nombre": "Ana",
+      "apellido": "Martinez"
+    },
+    {
+      "id": "992",
+      "nombre": "Luis",
+      "apellido": "Fernandez"
+    },
+    {
+      "id": "956",
+      "nombre": "kevincito",
+      "apellido": "davezac"
+    }
+  ]
+}
